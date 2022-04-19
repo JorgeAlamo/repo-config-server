@@ -17,6 +17,8 @@ logging:
         data:
           r2dbc: DEBUG
 eureka:
+  instance:
+    preferIpAddress: true
   client:
     service-url:
       defaultZone: http://192.168.1.10:8761/eureka/

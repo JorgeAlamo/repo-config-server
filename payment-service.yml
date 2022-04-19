@@ -2,21 +2,21 @@ spring:
   application:
     name: payment-service
   redis:
-    host: localhost
+    host: 192.168.1.10
     port: 6380
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:9999/realms/oauth-secure
+          issuer-uri: http://192.168.1.10:9999/realms/oauth-secure
 service:
   url:
     api:
-      servicePayment: http://localhost:8080/service-payment
-      favorite: http://localhost:8080/favorites
+      servicePayment: http://192.168.1.10:8080/service-payment
+      favorite: http://192.168.1.10:8080/favorites
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://192.168.1.10:8761/eureka/
 server:
   port: 8081

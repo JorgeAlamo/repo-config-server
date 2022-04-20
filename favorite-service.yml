@@ -2,7 +2,7 @@ spring:
   application:
     name: favorite-service
   r2dbc:
-    url: r2dbc:pool:mysql://${services.url.mysqldb}/servicedb
+    url: r2dbc:pool:mysql://${services.url.mysqldb}:3306/servicedb
     username: root
     password: root
   security:

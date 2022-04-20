@@ -10,7 +10,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://192.168.1.10/realms/oauth-secure
+          issuer-uri: http://192.168.1.10:8080/realms/oauth-secure
 eureka:
   instance:
     preferIpAddress: true

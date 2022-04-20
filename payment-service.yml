@@ -2,23 +2,23 @@ spring:
   application:
     name: payment-service
   redis:
-    host: 192.168.1.10
+    host: "${services.url.redis-cache}"
     port: 6380
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://192.168.1.10:9999/realms/oauth-secure
+          issuer-uri: "http://${services.url.keycloak}:9999/realms/oauth-secure"
 service:
   url:
     api:
-      servicePayment: http://192.168.1.10:8080/service-payment
-      favorite: http://192.168.1.10:8080/favorites
+      servicePayment: "http://${services.url.service-payment}:8082/service-payment"
+      favorite: "http://${services.url.favorite}:8083/favorites"
 eureka:
   instance:
     preferIpAddress: true
   client:
     service-url:
-      defaultZone: http://192.168.1.10:8761/eureka/
+      defaultZone: "http://${services.url.eureka}:8761/eureka/"
 server:
   port: 8081

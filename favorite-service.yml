@@ -2,14 +2,14 @@ spring:
   application:
     name: favorite-service
   r2dbc:
-    url: r2dbc:pool:mysql://192.168.1.10:3308/servicedb
+    url: r2dbc:pool:mysql://${services.url.mysqldb}/servicedb
     username: root
     password: root
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://192.168.1.10:9999/realms/oauth-secure
+          issuer-uri: http://${services.url.keycloak}:8080/realms/oauth-secure
 logging:
   level:
     org:
@@ -21,6 +21,6 @@ eureka:
     preferIpAddress: true
   client:
     service-url:
-      defaultZone: http://192.168.1.10:8761/eureka/
+      defaultZone: http://${services.url.eureka}:8761/eureka/
 server:
   port: 8083

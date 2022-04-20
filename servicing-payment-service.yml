@@ -3,14 +3,14 @@ spring:
     name: servicing-payment-service
   data:
     mongodb:
-      host: mongo-db
+      host: 192.168.1.10
       port: 27017
       database: servicedb
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://keycloak-auth/realms/oauth-secure
+          issuer-uri: http://192.168.1.10/realms/oauth-secure
 eureka:
   instance:
     preferIpAddress: true

@@ -3,7 +3,7 @@ spring:
     name: payment-service
   redis:
     host: "${services.url.redis-cache}"
-    port: 6380
+    port: 6379
   security:
     oauth2:
       resourceserver:
